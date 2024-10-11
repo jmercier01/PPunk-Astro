@@ -1,12 +1,10 @@
 ---
-import '../styles/global.css';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+const pageH2 = "This is my blog";
+const pageTitle = "Oo's blogging"
 ---
-<body class="m-6 p-5 ">
-    <Header/>
-    <h1 class="text-center">This is my blog</h1>
+<BaseLayout pageH2={pageH2} pageTitle={pageTitle}>
     <p class="my-6">This is where I will post about my journey learning Astro</p>
-    
-    <Footer/>
-</body>
+    <p>Irure mollit ullamco sit consequat occaecat aute reprehenderit sint voluptate ex sint laboris proident amet. Irure nulla elit labore ut occaecat ex minim pariatur exercitation mollit. Pariatur eu dolore nostrud veniam in commodo anim nisi nostrud laborum. Officia cupidatat fugiat adipisicing irure. Mollit commodo veniam id ex dolor magna cillum eu.</p>
+    <img class="rounded-lg my-6" src="http://unsplash.it/400/400?random&gravity=center" alt="">
+</BaseLayout>

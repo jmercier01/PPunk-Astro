@@ -1,9 +1,9 @@
 ---
-import '../styles/global.css';
-import Footer from '../components/Footer.astro';
-import Header from '../components/Header.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+const pageTitle = "About me";
+const pageH2 = "What I know";
 
-const pageTitle = "About Me";
+// import "../scripts/menu.js";
 
 const identity = {
   firstName: "Sarah",
@@ -22,89 +22,79 @@ const skillColor = "navy"
 const fontWeight = "bold"
 const textCase = "uppercase"
 ---
-
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>{pageTitle}</title>
-  </head>
-  
-  <style define:vars={{skillColor,fontWeight, textCase}}>
-    h1{
-        background-color: rgb(185, 224, 14);
-        color: purple;
-        font-size: 4rem;
-    }
-    .skill{
-        
-        color: var(--skillColor);
-        font-weight: var(--fontWeight);
-        text-transform: var(--textCase)
-    }
-  </style>
-  
-  <body
-    class=""
-  >
-    <Header/>
-
-    <h1
-      class="w-auto text-center my-5 py-4 px-8"
-    >
-      {pageTitle}
-    </h1>
-    <h2 class="border mb-12 px-8 py-4 rounded-xl">Mon nouveau site</h2>
-    <div
-      class="grid grid-flow-row-dense grid-rows-1 grid-cols-3 gap-3 mx-12 mb-36"
-    >
-      <div class="flex flex-col gap-3">
-        <p class="">Here's a few things about me</p>
-        <ul class="border-y py-2">
-          <li>My name is {identity.firstName}</li>
-          <li>
-            I live in {identity.country} and I work as {identity.occupation}
-          </li>
-          {
-            identity.hobbies.length >= 2 && (
-              <li>
-                Two of my hobbies are {identity.hobbies[0]} and{" "}
-                {identity.hobbies[1]}
-              </li>
-            )
-          }
-        </ul>
-        <p>My skills are:</p>
-        <ul>
-          {
-            skills.map((skill) => (
-              <li class="skill inline-flex p-2 bg-white rounded-md m-1">
-                {skill}
-              </li>
-            ))
-          }
-        </ul>
-        {happy && <p>I am happy to be learning Astro</p>}
-        {finished && <p>I finished this tutorial</p>}
-        {
-          goal === 3 ? (
-            <p>My goal is to finish in 3 days</p>
-          ) : (
-            <p>My goal is not 3 days</p>
-          )
+<BaseLayout pageTitle={pageTitle} pageH2 = {pageH2}>
+    <style define:vars={{skillColor,fontWeight, textCase}}>
+        .skill{
+            
+            color: var(--skillColor);
+            font-weight: var(--fontWeight);
+            text-transform: var(--textCase)
         }
-      </div>
-      <img
-        class="rounded-xl"
-        src="http://unsplash.it/400/400?random&gravity=center"
-        alt=""
-      />
-      <img
-        class="rounded-xl"
-        src="http://unsplash.it/g/400/400?random&gravity=east"
-        alt=""
-      />
-    </div>
-    <Footer/>
+      </style>
+
+
+        <div
+          class="grid grid-flow-row-dense grid-rows-2 grid-cols-3 gap-3 mb-36"
+        >
+          <div class="flex flex-col gap-3 text-white row-span-2">
+            <p class="">Here's a few things about me</p>
+            <ul class="border-y py-2">
+              <li>My name is {identity.firstName}</li>
+              <li>
+                I live in {identity.country} and I work as {identity.occupation}
+              </li>
+              {
+                identity.hobbies.length >= 2 && (
+                  <li>
+                    Two of my hobbies are {identity.hobbies[0]} and{" "}
+                    {identity.hobbies[1]}
+                  </li>
+                )
+              }
+            </ul>
+            <p>My skills are:</p>
+            <ul>
+              {
+                skills.map((skill) => (
+                  <li class="skill inline-flex p-2 bg-white rounded-md m-1">
+                    {skill}
+                  </li>
+                ))
+              }
+            </ul>
+            {happy && <p>I am happy to be learning Astro</p>}
+            {finished && <p>I finished this tutorial</p>}
+            {
+              goal === 3 ? (
+                <p>My goal is to finish in 3 days</p>
+              ) : (
+                <p>My goal is not 3 days</p>
+              )
+            }
+          </div>
+          <img
+            class="rounded-xl"
+            src="http://unsplash.it/400/400?random&gravity=center"
+            alt=""
+          />
+          <img
+            class="rounded-xl"
+            src="http://unsplash.it/g/400/400?random&gravity=east"
+            alt=""
+          />
+          <img
+            class="rounded-xl"
+            src="http://unsplash.it/g/400/400?random&gravity=north"
+            alt=""
+          />
+          <img
+            class="rounded-xl"
+            src="http://unsplash.it/g/400/400?random&gravity=center"
+            alt=""
+          />
+        </div>  
+
+</BaseLayout>
+        
   </body>
 </html>

@@ -1,8 +1,19 @@
 ---
+import Hamburger from "./Hamburger.astro";
 import Navigation from "./Navigation.astro";
 ---
 <header class="w-full flex justify-between px-3 bg-black text-white py-5">
-    <h1>JEROME</h1>
-    <div><Navigation /></div>
+    <img id="logo" class="opacity-0 w-[10%]" src="../asset/images/logo.svg" alt="" />
+    <nav>
+        <Hamburger />
+        <Navigation />
+    </nav>
     
 </header>
+<script>
+    const tl = gsap.timeline();
+    tl.to("#logo",{opacity:1,duration:3,rotation:360})
+    tl.to("#logo",{scale:0.5,duration:1},"<");
+    tl.to("#logo",{scale:1,duration:2,rotation:0, ease:"bounce.out"});
+
+</script>
