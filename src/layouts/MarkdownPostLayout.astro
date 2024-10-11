@@ -1,0 +1,19 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+const pageTitle = "Blog";
+const { frontmatter } = Astro.props;
+
+---
+<BaseLayout pageTitle={pageTitle}>
+<div class="bg-gray-100 p-7 w-full">
+    <h2 class="text-4xl my-6">{frontmatter.title}</h2>
+    <p class="text-xl my-2">Written by <span class="font-light">{frontmatter.author}</span> - <span id="date">{frontmatter.pubDate.toString().slice(0,10)}</span></p>
+    <div class="flex w-full gap-6 my-7">
+        <img src={frontmatter.image.url} class="w-48 h-60 object-cover" alt="">
+        <div class="border bg-gray-500 text-white p-6">
+            <h3 class="font-bold mb-2 text-2xl">{frontmatter.description}</h3>
+            <p ><slot /></p>
+        </div>
+    </div>
+</div>
+</BaseLayout>

@@ -1,10 +1,14 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import BlogPost from '../components/BlogPost.astro';
+const allPosts = await Astro.glob('./posts/*.md');
 const pageH2 = "This is my blog";
 const pageTitle = "Oo's blogging"
 ---
 <BaseLayout pageH2={pageH2} pageTitle={pageTitle}>
     <p class="my-6">This is where I will post about my journey learning Astro</p>
-    <p>Irure mollit ullamco sit consequat occaecat aute reprehenderit sint voluptate ex sint laboris proident amet. Irure nulla elit labore ut occaecat ex minim pariatur exercitation mollit. Pariatur eu dolore nostrud veniam in commodo anim nisi nostrud laborum. Officia cupidatat fugiat adipisicing irure. Mollit commodo veniam id ex dolor magna cillum eu.</p>
-    <img class="rounded-lg my-6" src="http://unsplash.it/400/400?random&gravity=center" alt="">
+    <div class="grid grid-cols-3 grid-rows-2 gap-1">
+        {allPosts.map((post)=><BlogPost url={post.url} title={post.frontmatter.title} image={post.frontmatter.image.url}></BlogPost>)}
+    </div>
+    
 </BaseLayout>
