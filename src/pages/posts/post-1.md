@@ -5,7 +5,7 @@ pubDate: 2022-07-01
 description: What I've accomplished.
 author: 'Astro Learner'
 image:
-    url: 'https://docs.astro.build/assets/rose.webp'
+    url: 'http://unsplash.it/400/400?random&gravity=center'
     alt: 'The Astro logo on a dark background with a pink glow.'
 tags: ["astro", "blogging", "learning in public"]
 ---

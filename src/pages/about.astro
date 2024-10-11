@@ -1,24 +1,24 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 const pageTitle = "About me";
-const pageH2 = "What I know";
+const pageH2 = "What I am";
 
 // import "../scripts/menu.js";
 
 const identity = {
-  firstName: "Sarah",
-  country: "Canada",
-  occupation: "Technical Writer",
-  hobbies: ["photography", "birdwatching", "baseball"],
+  firstName: "Calimero",
+  country: "Camenbert City",
+  occupation: "Technical Sleeper",
+  hobbies: ["pizza", "bike", "coding"],
 };
 
 const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
 
 const happy = true;
-const finished = false;
+const finished = true;
 const goal = 3;
 
-const skillColor = "navy"
+const skillColor = "#8ecae6"
 const fontWeight = "bold"
 const textCase = "uppercase"
 ---
@@ -36,7 +36,7 @@ const textCase = "uppercase"
         <div
           class="grid grid-flow-row-dense grid-rows-2 grid-cols-3 gap-3 mb-36"
         >
-          <div class="flex flex-col gap-3 text-white row-span-2">
+          <div class="flex flex-col gap-3 row-span-2">
             <p class="">Here's a few things about me</p>
             <ul class="border-y py-2">
               <li>My name is {identity.firstName}</li>
@@ -56,7 +56,7 @@ const textCase = "uppercase"
             <ul>
               {
                 skills.map((skill) => (
-                  <li class="skill inline-flex p-2 bg-white rounded-md m-1">
+                  <li class="skill inline-flex p-2 bg-[#023047] rounded-md m-1">
                     {skill}
                   </li>
                 ))

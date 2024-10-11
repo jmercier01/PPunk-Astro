@@ -1,5 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 html {
-    background-color: #538bc3;
+    background-color: #023047;
     font-family: sans-serif;
     height: 100%;
 }
@@ -13,7 +17,17 @@ body {
     height: 100%;
     display: flex;
     flex-direction: column;
+    background-color: #8ecae6 ;
 }
+body.dark {
+    background-color: #1e1e21;
+    color: #fff;
+  }
+  
+  .dark .nav-links a {
+    color: #fff;
+  }
+
 
 * {
     box-sizing: border-box;
@@ -21,7 +35,7 @@ body {
 
 
 .accent {
-    color: #4c1d95;
+    color: #8ecae6;
 }
 
 /* nav styles */
@@ -58,7 +72,7 @@ body {
 
 .nav-links a:hover,
 .nav-links a:focus {
-    background-color: #ffffff;
+    background-color: #ffb703;
     color:#000;
 }
 

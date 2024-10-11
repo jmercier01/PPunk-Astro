@@ -5,7 +5,7 @@ const { frontmatter } = Astro.props;
 
 ---
 <BaseLayout pageTitle={pageTitle}>
-<div class="bg-gray-100 p-7 w-full">
+<div class="border p-7 w-full rounded-lg bg-slate-500">
     <h2 class="text-4xl my-6">{frontmatter.title}</h2>
     <p class="text-xl my-2">Written by <span class="font-light">{frontmatter.author}</span> - <span id="date">{frontmatter.pubDate.toString().slice(0,10)}</span></p>
     <div class="flex w-full gap-6 my-7">
@@ -15,5 +15,6 @@ const { frontmatter } = Astro.props;
             <p ><slot /></p>
         </div>
     </div>
+    <div class="flex flex-wrap">{frontmatter.tags.map((tag)=><p class="m-1 border-[#a1a1a1] rounded-lg py-2 px-4 text-lg bg-[#F8FCFD]"><a href={`/tags/${tag}`}>{tag}</a></p>)}</div>    
 </div>
 </BaseLayout>

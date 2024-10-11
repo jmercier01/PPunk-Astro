@@ -2,6 +2,7 @@
 import "../styles/global.css";
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
+import '../styles/global.css';
 // import { gsap } from "gsap";
 // import { ScrollTrigger } from "gsap/ScrollTrigger";
 // import { ScrollToPlugin } from "gsap/ScrollToPlugin";
@@ -9,7 +10,6 @@ import Header from "../components/Header.astro";
 
 const {pageTitle} = Astro.props;
 const {pageH2} = Astro.props; 
-
 
 ---
 
@@ -21,11 +21,12 @@ const {pageH2} = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{pageTitle}</title>
     <script is:inline src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+
   </head>
   <body>
-    <div id="main">
+    <div class="main">
       <Header />
-      <h1 class="w-full text-right text-white before:content-['--']"> {pageTitle}</h1>
+      <h1 class="w-full text-right text-[#023047] before:content-['--']"> {pageTitle}</h1>
       <h2 class="text-5xl mb-7">{pageH2}</h2>
       <slot />
     </div>
