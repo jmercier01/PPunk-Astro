@@ -13,7 +13,7 @@
     "@astrojs/preact": "^3.5.3",
     "@astrojs/rss": "^4.0.8",
     "@astrojs/tailwind": "^5.1.2",
-    "astro": "^4.15.12",
+    "astro": "^4.16.18",
     "autoprefixer": "^10.4.20",
     "gsap": "^3.12.5",
     "postcss": "^8.4.47",
